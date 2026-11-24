@@ -38,84 +38,19 @@
 
 ## 🏗️ Структура и Архитектура
 
-```mermaid
-flowchart TD
-    A[📥 Источники данных: SQLite, CSV] --> B[⚙️ Staging: Pandas -> CSV]
-    B --> C[🔥 Apache Spark local cluster]
-    C --> D[🧹 DataFrame API & Spark SQL]
-    D --> E[📊 Практика №3: Аналитика ecommerce]
-    D --> F[⚙️ Практика №4: Исследование планов Spark]
-    D --> G[🤖 Практика №5: Spark MLlib]
-    G --> H[🎙️ Датасет подкастов]
-    H --> I[📈 Линейная регрессия]
-    H --> J[🌲 Random Forest]
-    I --> K[📊 Оценка метрик: MAE, RMSE, R²]
-    J --> K
-    
-    style A fill:#DAE8FC,stroke:#6C8EBF
-    style C fill:#FFE6CC,stroke:#D79B00
-    style G fill:#D5E8D4,stroke:#82B366
-    style K fill:#E1D5E7,stroke:#9673A6
+**Схема обработки данных:**
 
-    <div align="center">
-
-# 📊 Big Data Analytics & Machine Learning
-
-### Распределённая обработка данных и машинное обучение в Apache Spark
-
-**Учебный курс «Технологии и инструментарий анализа больших данных»**
-
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Apache Spark](https://img.shields.io/badge/Apache%20Spark-3.5+-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)](https://spark.apache.org/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![License](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)](./LICENSE)
-
-[![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)]()
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey?style=flat-square)]()
-
-</div>
-
----
-
-## 📖 О проекте
-
-Репозиторий содержит комплекс выполненных практических работ по дисциплине **«Технологии и инструментарий анализа больших данных»**. 
-
-В рамках работ был пройден полный цикл распределённой обработки данных: от развертывания локального кластера Spark и анализа физических планов выполнения запросов до построения моделей машинного обучения и прогнозирования поведения пользователей.
-
-### 🎯 Ключевые возможности
-
-| | Модуль | Описание |
-|---|---|---|
-| 📥 | **Staging** | Извлечение данных из SQLite/CSV и подготовка к распределённой обработке |
-| ⚙️ | **Spark SQL & DataFrame** | Трансформации, агрегации, JOIN-ы и анализ схем данных |
-| 🚀 | **Spark UI & Explain** | Исследование партиций, Shuffle, Sort Merge Join и Broadcast Join |
-| 🤖 | **Spark MLlib** | Построение Pipeline, One-Hot Encoding и обучение моделей |
-| 🧠 | **Регрессия и Классификация** | Линейная регрессия, Random Forest, предсказание времени прослушивания |
-
----
-
-## 🏗️ Структура и Архитектура
-
-Схема обработки данных:
-
-📥 Источники данных (SQLite, CSV)
-  ⬇️
-⚙️ Staging (Pandas -> CSV)
-  ⬇️
-🔥 Apache Spark (local cluster)
-  ⬇️
-🧹 DataFrame API & Spark SQL
-  ⬇️
-  ├── 📊 Практика №3: Аналитика ecommerce
-  ├── ⚙️ Практика №4: Исследование планов Spark (Shuffle, Join)
-  └── 🤖 Практика №5: Spark MLlib
-        ⬇️
-        🎙️ Датасет подкастов
-        ⬇️
-        📈 Модели: Линейная регрессия / Random Forest
-        ⬇️
-        📊 Оценка: MAE, RMSE, R²
+*   **📥 Источники данных:** SQLite (ecommerce), CSV (подкасты)
+*   **⚙️ Подготовка:** Извлечение через Pandas -> Staging-каталог
+*   **🔥 Spark Cluster:** Развертывание локальной SparkSession (`local[*]`)
+*   **🧹 Обработка:** DataFrame API и Spark SQL
+    *   *Практика №3:* Аналитика интернет-магазина (JOIN, агрегации, Parquet)
+    *   *Практика №4:* Анализ физических планов (Broadcast Join, Shuffle, Spark UI)
+    *   *Практика №5:* Машинное обучение (MLlib)
+*   **🤖 ML Pipeline:** 
+    *   Датасет: Подкасты (предсказание `Listening_Time`)
+    *   Модели: Линейная регрессия и Random Forest
+    *   Результат: Оценка метрик MAE, RMSE, R²
 
 ---
 

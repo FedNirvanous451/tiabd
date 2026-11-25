@@ -6,7 +6,7 @@ data/
 *.zip
 *.csv
 *.parquet
-
+practice8_data/
 
 __pycache__/
 .ipynb_checkpoints/
